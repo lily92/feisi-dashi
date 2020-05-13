@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>飞思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="active">
+  </header>
+  <!--end  header -->
+  <div class="main">
+    <!-- item1 -->
+    <div class="item1">
+      <img src="images/dashi-detail-banner.jpg" alt="" srcset="" class="w100 wow fadeIn">
+
+    </div>
+    <!-- end item1 -->
+
+    <!--star  content -->
+    <div class="content-detail bgf ">
+      <div class=" flex flex-just padding30 ">
+        <div class="left flex flex-center wow fadeInUp">
+          <img src="images/dashi-img.jpg" alt="" srcset="">
+        </div>
+        <div class="right flex flex-center wow fadeInUp">
+          <div>
+            <p class="fon40 right-title">保罗·里弗（Paul Reiffer）</p>
+            <p class="fon16">
+             Phase One是一家怀着满腔热情致力于为突破下一个成像技术而不懈努力的企业。正如Phase One从未止步于现有的发现和发明一样，我们精心挑选的Phase  One大使，也从未止步于他们在艺术和探索道路上已获得的成就。
+             他们探索常人无法想象的地方，捕捉难以解释却感受强烈的情感，创作出魔幻又真实的作品。他们具有无尽的好奇心、无穷的想象力和对图像质量有无限的执着等美好品质。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end  content -->
+
+
+
+
+    <!-- item list2 -->
+    <div class="list2 ">
+      <div id="demo" class="waterfall">
+       <div class="item"><img src="images/dashi-list1.jpg" alt="" srcset=""></div>
+       
+      </div>
+      <script>
+        layui.use('flow', function () {
+          var $ = layui.jquery; //不用额外加载jQuery，flow模块本身是有依赖jQuery的，直接用即可。
+          var flow = layui.flow;
+          flow.load({
+            elem: '#demo' //指定列表容器
+              ,
+            done: function (page, next) { //到达临界点（默认滚动触发），触发下一页
+              var lis = [];
+              //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+              $.get('js/list.json?page=' + page, function (res) {
+                //假设你的列表返回在data集合中
+                layui.each(res.data, function (index, item) {
+                  lis.push(' <div class="item wow fadeInUp"><img src="'+item.img+'" alt="" srcset=""></div>');
+                });
+
+                //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                next(lis.join(''), page < res.pages);
+              });
+            }
+          });
+        });
+      </script>
+
+    </div>
+    <!-- end item-list2 -->
+
+
+  </div>
+
+
+  <footer class="footer "></footer>
+
+
+</body>
+
+</html>

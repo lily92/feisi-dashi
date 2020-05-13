@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>飞思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="active">
+  </header>
+  <!--end  header -->
+  <div class="main">
+    <!-- item1 -->
+    <div class="item1 wow fadeIn">
+      <img src="images/video-banner.jpg" alt="" class="w100">
+
+    </div>
+    <!-- end item1 -->
+
+
+    <!-- list -->
+    <div class="list-video">
+      <p class="text-center fon40 wow fadeInUp">视频指南</p>
+      <ul class="list-video-ul w90 flex" id="videolist">
+       
+      </ul>
+      <script id="news_tpl" type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <li class='wow fadeInUp'>
+          <div class="video-img  positionr">
+            <!--占位符，勿读后台  -->
+            <img src="images/video-img-bg.jpg" alt="" srcset="" class="w100">
+            <div class="positionb">
+              <!--占位符，勿读后台  -->
+              <img src="{{item.img}}" alt="" srcset="" class="w100 master">
+            </div>
+          </div>
+          <div class="video-name flex flex-center ">
+            <div class="flex flex-center">
+              <span class="fon22">{{item.title}} </span>
+              <div class="play-icon"  data-url="{{item.url}}"></div>
+            </div>
+          </div>
+        </li>
+        {{#  }); }}
+      </script>
+      <div class="page text-center w90 fon16 ">
+        <a href="" class="page-prev-next">上一页</a>
+        <a href="">1</a>
+        <a href="">2</a>
+
+        <a href="">……</a>
+        <a href="">8</a>
+        <a href="" class="page-prev-next">下一页</a>
+      </div>
+    </div>
+    <div class="video-master animated slideInRight flex flex-center">
+      <img src="images/btn-close.png" alt="" srcset="" class="close-btn">
+      <video class="animated flipInX video" controls src="" poster="images/index-about-img.jpg" id="video" />
+    </div>
+    <script>
+      layui.use('laytpl', function () {
+        var laytpl = layui.laytpl;
+        var videolist = {
+          //品牌新闻数据
+          "list": [{
+              "id": "02",
+              "title": "XF IQ3",
+              "img": "images/video-img.jpg",
+              "url":"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+            },{
+              "id": "02",
+              "title": "XF IQ3",
+              "img": "images/video-img.jpg",
+              "url":"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+            },{
+              "id": "02",
+              "title": "XF IQ3",
+              "img": "images/video-img.jpg",
+              "url":"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+            },{
+              "id": "02",
+              "title": "XF IQ3",
+              "img": "images/video-img.jpg",
+              "url":"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+            },{
+              "id": "02",
+              "title": "XF IQ3",
+              "img": "images/video-img.jpg",
+              "url":"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+            },{
+              "id": "02",
+              "title": "XF IQ3",
+              "img": "images/video-img.jpg",
+              "url":"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+            }
+          ]
+        }
+        var news_tpls = news_tpl.innerHTML;
+        var view = document.getElementById('videolist');
+        laytpl(news_tpls).render(videolist, function (html) {
+          view.innerHTML = html;
+          var video = document.getElementById('video')
+          $('.play-icon').click(function (e) {
+            e.preventDefault();
+            var url = $(this).attr('data-url');
+            $('#video').attr('src', url)
+            $('.video-master').css('display', 'flex')
+            video.play();
+
+          });
+          $('.close-btn').click(function (e) {
+            e.preventDefault();
+            $('.video-master').css('display', 'none')
+            video.pause();
+            $('#video').attr('src', '')
+          });
+        });
+
+      })
+    </script>
+
+  </div>
+  <!-- end list -->
+
+  </div>
+
+
+  <footer class="footer "></footer>
+
+
+</body>
+
+</html>

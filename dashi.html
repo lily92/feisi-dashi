@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="css/phone.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <title>飞思</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="active">
+  </header>
+  <!--end  header -->
+  <div class="main">
+    <!-- item1 -->
+    <div class="item1">
+      <img src="images/dashi-banner.jpg" alt="" srcset="" class="w100">
+
+    </div>
+    <!-- end item1 -->
+
+    <!--star  content -->
+    <div class="content">
+      <div class="max645 fon16 text-center">
+        Phase One是一家怀着满腔热情致力于为突破下一个成像技术而不懈努力的企业。<br>
+        正如Phase One从未止步于现有的发现和发明一样，我们精心挑选的Phase One大使，<br>
+        也从未止步于他们在艺术和探索道路上已获得的成就。<br>
+        他们探索常人无法想象的地方，捕捉难以解释却感受强烈的情感，创作出魔幻又真实的作品。<br>
+        他们具有无尽的好奇心、无穷的想象力和对图像质量有无限的执着等美好品质。<br>
+        以下是Phase One大使介绍。
+      </div>
+    </div>
+    <!--end  content -->
+
+    <!-- list-dashi -->
+    <div class="bgfa dashi-list">
+      <ul class="dashi-list-ul" id="videolist">
+       
+      </ul>
+      <script id="news_tpl" type="text/html">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <li class="flex flex-just">
+          <a class="list-img positionr wow fadeInUp" href='dashi-details.html'>
+            <img src="images/dashi-img.jpg" alt="" srcset="" class="w100">
+            <div class="positionb">
+              <img src="{{item.img}}" alt="" srcset="" class="w100">
+            </div>
+          </a>
+          <a class="list-desc flex flex-al-center wow fadeInUp" href='dashi-details.html'>
+            <div class="desc-bg bgf ">
+              <p class="fon22">{{item.title}}</p>
+              <div class="fon16">{{item.desc}}</div>
+            </div>
+          </a>
+        </li>
+        {{#  }); }}
+      </script>
+
+
+      <script>
+        layui.use('laytpl', function () {
+          var laytpl = layui.laytpl;
+          var videolist = {
+            //品牌新闻数据
+            "list": [{
+              "id": "02",
+              "title": "Paul Reiffer",
+              "img": "images/dashi-img.jpg",
+              "desc": "Phase One 大使Paul Reiffer 在童年时期拥有一部Kodak Disc 6000 8mm照相机，那时他的父亲在英格兰南部海岸的家中阁楼上建立了一个暗房，自那时起，Paul就一直保留着这部相机直到现在。如今他为一些享誉国际的品牌提供自然和城市风光拍摄，从国际连锁酒店到航空公司，客户包括《国家地理》，IMAX等。Paul的作品用无可比拟的分辨率和中画幅影像展示世界各地令人惊叹震撼的景色。"
+            }, {
+              "id": "02",
+              "title": "Paul Reiffer",
+              "img": "images/dashi-img2.jpg",
+              "desc": "Phase One 大使Paul Reiffer 在童年时期拥有一部Kodak Disc 6000 8mm照相机，那时他的父亲在英格兰南部海岸的家中阁楼上建立了一个暗房，自那时起，Paul就一直保留着这部相机直到现在。如今他为一些享誉国际的品牌提供自然和城市风光拍摄，从国际连锁酒店到航空公司，客户包括《国家地理》，IMAX等。Paul的作品用无可比拟的分辨率和中画幅影像展示世界各地令人惊叹震撼的景色。"
+            }, {
+              "id": "02",
+              "title": "Paul Reiffer",
+              "img": "images/dashi-img3.jpg",
+              "desc": "Phase One 大使Paul Reiffer 在童年时期拥有一部Kodak Disc 6000 8mm照相机，那时他的父亲在英格兰南部海岸的家中阁楼上建立了一个暗房，自那时起，Paul就一直保留着这部相机直到现在。如今他为一些享誉国际的品牌提供自然和城市风光拍摄，从国际连锁酒店到航空公司，客户包括《国家地理》，IMAX等。Paul的作品用无可比拟的分辨率和中画幅影像展示世界各地令人惊叹震撼的景色。"
+            }, {
+              "id": "02",
+              "title": "Paul Reiffer",
+              "img": "images/dashi-img4.jpg",
+              "desc": "Phase One 大使Paul Reiffer 在童年时期拥有一部Kodak Disc 6000 8mm照相机，那时他的父亲在英格兰南部海岸的家中阁楼上建立了一个暗房，自那时起，Paul就一直保留着这部相机直到现在。如今他为一些享誉国际的品牌提供自然和城市风光拍摄，从国际连锁酒店到航空公司，客户包括《国家地理》，IMAX等。Paul的作品用无可比拟的分辨率和中画幅影像展示世界各地令人惊叹震撼的景色。"
+            }, {
+              "id": "02",
+              "title": "Paul Reiffer",
+              "img": "images/dashi-img5.jpg",
+              "desc": "Phase One 大使Paul Reiffer 在童年时期拥有一部Kodak Disc 6000 8mm照相机，那时他的父亲在英格兰南部海岸的家中阁楼上建立了一个暗房，自那时起，Paul就一直保留着这部相机直到现在。如今他为一些享誉国际的品牌提供自然和城市风光拍摄，从国际连锁酒店到航空公司，客户包括《国家地理》，IMAX等。Paul的作品用无可比拟的分辨率和中画幅影像展示世界各地令人惊叹震撼的景色。"
+            }]
+          }
+          var news_tpls = news_tpl.innerHTML;
+          var view = document.getElementById('videolist');
+          laytpl(news_tpls).render(videolist, function (html) {
+            view.innerHTML = html;
+
+          });
+
+        })
+      </script>
+    </div>
+    <!-- end list-dashi -->
+
+
+
+    <!-- item list2 -->
+    <div class="list2">
+      <div class="text-center">
+        <p class="fon40">精选作品</p>
+        <p class="fon16">精彩的作品，由他们不懈的好奇心，不竭的想象力以及对品质的执着所定义</p>
+      </div>
+      <div id="waterfall" class="waterfall">
+      
+       <div class="item"><img src="images/dashi-list1.jpg" alt="" srcset=""></div>
+       
+      </div>
+      <script>
+        layui.use('flow', function () {
+          var $ = layui.jquery; //不用额外加载jQuery，flow模块本身是有依赖jQuery的，直接用即可。
+          var flow = layui.flow;
+          flow.load({
+            elem: '#waterfall' //指定列表容器
+              ,
+            done: function (page, next) { //到达临界点（默认滚动触发），触发下一页
+              var lis = [];
+              //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
+              $.get('js/list.json?page=' + page, function (res) {
+                //假设你的列表返回在data集合中
+                layui.each(res.data, function (index, item) {
+                  lis.push(' <div class="item wow fadeInUp _item'+item.index+'" id="_item'+item.index+'"><img src="'+item.img+'" alt="" srcset=""></div>');
+                });
+
+                //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                next(lis.join(''), page < res.pages);
+                var X = $('#_item7').offsetTop;
+                console.log(X)
+
+              });
+            }
+          });
+        });
+      </script>
+
+    </div>
+    <!-- end item-list2 -->
+
+
+  </div>
+
+
+  <footer class="footer "></footer>
+
+
+</body>
+
+</html>
